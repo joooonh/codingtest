@@ -46,6 +46,5 @@ public class MaxMin {
 		}
 		
 		System.out.println("minUnfairness : " + minUnfairness);
-		System.out.println("연동");
 	}
 }

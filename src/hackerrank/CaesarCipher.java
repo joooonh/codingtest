@@ -13,26 +13,11 @@ public class CaesarCipher {
 		System.out.print("int k : " );
 		int k = sc.nextInt();
 		
-		
-		/*
-		 * 내 생각
-		 * - 원래 알파벳 배열이 있고, rotated된 빈 배열을 새로 만듦
-		 * - 원래 알파벳 배열에서 k만큼 이동한게 rotated 된 배열 
-		 * (원래 배열의 k번째부터 시작해서 26-k는 다시 처음이어야 함)
-		 * - 소문자, 대문자 구분 
-		 * - 입력받은 문자열의 각 문자의 인덱스를 구하고, 그 인덱스에 해당하는 문자를 rotated 배열에서 찾음
-		 * 
-		 */
-		
-		// 아스키코드 이용 !! 
-		
 		// 알파벳이 26자이고 k가 26보다 크더라도 그 안에서 돌아야 되니까 26으로 나눈 나머지가 k가 되게 함
 		k = k%26;
 		// 암호화된 문자열을 생성하기 위함
 		StringBuilder sb = new StringBuilder();
 		
-		// 와 원래 알파벳 배열, 새로 만든 배열 이런게 없어도 되네 ㅁㅊ 
-		// 문자 하나씩 뽑아서 거기다 k만큼을 더한게 -> 이동한 값이랑 똑같네
 		// 일단 문자열을 char 배열로 변환해서 거기서 char를 하나씩 뽑아
 		for(char c : s.toCharArray()) {
 			// 문자일 때만 암호화 
@@ -54,7 +39,5 @@ public class CaesarCipher {
 		}
 		
 		System.out.println("rotated : " + sb);
-		
 	}
-
 }

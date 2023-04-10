@@ -15,6 +15,7 @@ public class PalindromeIndex {
 		int start = 0; 
 		int end = s.length() - 1; 
 		
+		
 		// 양쪽 끝에서부터 만날 때까지 회문인지 확인
 		while (start < end) {
 			if(s.charAt(start) != s.charAt(end)) 

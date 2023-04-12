@@ -21,16 +21,18 @@ public class FlippingTheMatrix {
 
 	private static int flippingMatrix(List<List<Integer>> matrix) {
 		
-		int size = matrix.size();
+		// 행렬의 크기를 절반으로 나누면 -> 1사분면의 크기
+		int quadSize = matrix.size()/2;
 		int sum = 0;
 		
-		for(int r=0; r < size; r++) {
-			for(int c=0; c < size; c++) {
+		for(int r=0; r < quadSize; r++) {
+			for(int c=0; c < quadSize; c++) {
 				
+				// 2*quadSize = 행렬의 전체 크기 
 				int p1 = matrix.get(r).get(c);
-				int p2 = matrix.get(size-r-1).get(c);
-				int p3 = matrix.get(r).get(size-c-1);
-				int p4 = matrix.get(size-r-1).get(size-c-1);
+				int p2 = matrix.get((2*quadSize)-r-1).get(c);
+				int p3 = matrix.get(r).get((2*quadSize)-c-1);
+				int p4 = matrix.get((2*quadSize)-r-1).get((2*quadSize)-c-1);
 				
 				sum += Math.max(p1, Math.max(p2, Math.max(p3, p4)));
 			}
